@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1> ToDo List </h1>
+    </div>
+    <div class="input">
+        <input type="text" placeholder="Enter a task" id="item-text">
+        <button onclick="addItem()">Add</button>
+    </div>
+    <div class="list-container">
+        <ul class="list">
+
+        </ul>
+    </div>
+
+    <script>
+        const addItem = ()=> {
+            const list = document.querySelector('.list');
+            const itemName = document.querySelector('#item-text')
+            const item =`<li>
+                <span>${itemName.value}</span>
+                <button>Edit</button>
+                <button class="delete-btn" onclick="deleteItem()">Delete</button>    
+            </li>`
+            list.innerHTML = item;
+            itemName.value = "";
+        }
+    </script>
+</body>
+</html>
